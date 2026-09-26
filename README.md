@@ -1,7 +1,7 @@
-# Hybrid Encryption Framework â€” Baudot + Chaotic Maps + AES / 3DES / Twofish
+# Hybrid Encryption Framework -- Baudot + Chaotic Maps + AES / 3DES / Twofish
 
-> **Integrating Baudot Encoding and Chaotic Maps with Symmetric Cryptography: A Hybrid Encryption Framework**  
-> IEEE ICECA 2025 â€” DOI: [10.1109/ICECA66444.2025.11383142](https://doi.org/10.1109/ICECA66444.2025.11383142)
+> **Integrating Baudot Encoding and Chaotic Maps with Symmetric Cryptography: A Hybrid Encryption Framework**
+> IEEE ICECA 2025 -- DOI: [10.1109/ICECA66444.2025.11383142](https://doi.org/10.1109/ICECA66444.2025.11383142)
 
 ---
 
@@ -13,18 +13,22 @@ A **triple-layer hybrid encryption pipeline** that combines classical encoding t
 
 ```
 Plaintext
-    â†“
+    |
+    v
 [Layer 1] Modified Caesar Cipher
-          â€” circular linked list determines shift value based on adjacent word count
-    â†“
+          -- circular linked list determines shift value based on adjacent word count
+    |
+    v
 [Layer 2] Baudot Encoding
-          â€” maps characters to 5-bit Baudot codes
-    â†“
+          -- maps characters to 5-bit Baudot codes
+    |
+    v
 [Layer 3] Symmetric Encryption (choose one)
-          â”œâ”€â”€ AES-256 (CBC mode)
-          â”œâ”€â”€ 3DES
-          â””â”€â”€ Twofish
-    â†“
+          |-- AES-256 (CBC mode)
+          |-- 3DES
+          +-- Twofish
+    |
+    v
 Ciphertext
 ```
 
@@ -38,7 +42,7 @@ Ciphertext
 | 3DES | 168-bit (effective) | 64-bit | Secure but slower than AES |
 | Twofish | 256-bit | 128-bit | Feistel network; AES finalist |
 
-**Chaotic key generation:** Tent map and logistic map used to generate pseudo-random key material with high sensitivity to initial conditions â€” small changes in seed produce completely different keys (avalanche effect).
+**Chaotic key generation:** Tent map and logistic map used to generate pseudo-random key material with high sensitivity to initial conditions -- small changes in seed produce completely different keys (avalanche effect).
 
 ---
 
@@ -74,14 +78,15 @@ pip install pycryptodome
 
 ## Key Concepts
 
-- **Avalanche effect** â€” a property of good ciphers: flipping 1 input bit changes ~50% of output bits
-- **Chaotic maps** â€” deterministic systems with extreme sensitivity to initial conditions; useful for key generation
-- **Baudot encoding** â€” 5-bit character encoding predating ASCII; adds a structural obfuscation layer
-- **Why hybrid?** No single algorithm is optimal across all metrics â€” this framework lets you select by speed vs security trade-off
+- **Avalanche effect** -- a property of good ciphers: flipping 1 input bit changes ~50% of output bits
+- **Chaotic maps** -- deterministic systems with extreme sensitivity to initial conditions; useful for key generation
+- **Baudot encoding** -- 5-bit character encoding predating ASCII; adds a structural obfuscation layer
+- **Why hybrid?** -- No single algorithm is optimal across all metrics; this framework lets you select by speed vs security trade-off
 
 ---
 
 ## Authors
 
-Geda Tejesh Chowdary Â· Paramkusam Sriharsha Â· Yelipe Gowtham  
+Geda Tejesh Chowdary | Paramkusam Sriharsha | Yelipe Gowtham
+
 Amrita Vishwa Vidyapeetham, Bengaluru
